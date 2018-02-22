@@ -1,3 +1,13 @@
-<p>
-  to-do-list works!
-</p>
+<div class="wrapper">
+  <h1>My To Do List</h1>
+  <div class="item">
+    <input [(ngModel)]="addItem" type="text" placeholder="Add Item Please">
+    <button (click)="addList()">Add</button>
+  </div>
+  <ul class="listItem">
+    <li *ngFor="let x of listObj.items; let ind = index">
+      {{x}}
+      <span (click)="removeItem(ind)">X</span>
+    </li>
+  </ul>
+</div>
