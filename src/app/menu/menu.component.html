@@ -1,0 +1,25 @@
+<div class="menu-wrapper">
+    <ul>
+        <li
+            (click)="showContent('todo')"
+            [ngClass]="{'active': isCont1}">
+            To Do
+        </li>
+        <li
+            (click)="showContent('counter')"
+            [ngClass]="{'active': isCont2}">
+            Counter
+        </li>
+        <li
+            (click)="showContent('clock')"
+            [ngClass]="{'active': isCont3}">
+            Clock
+        </li>
+    </ul>
+</div>
+<div class="content-wrapper">
+    <div *ngIf="isCont1"><app-to-do-list></app-to-do-list></div>
+    <div *ngIf="isCont2"><app-counter></app-counter></div>
+    <div *ngIf="isCont3"><app-clock></app-clock></div>
+</div>
+

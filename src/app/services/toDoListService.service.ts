@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class ToDoListServiceService {
+export class ToDoListService {
     items = ['item-1', 'item-2', 'item-3' ];
 
-    pushItem = (item: string) => {
+    public pushItem = (item: string) => {
       if (item !== '') {
           this.items.push(item);
           item = '';
       }
     }
 
-    removeItem = (index) => {
+    public removeItem = (index) => {
       this.items.splice(index, 1);
     }
 }
