@@ -10,12 +10,10 @@ import {ToDoListService} from '../services/toDoListService.service';
 export class ToDoListComponent implements OnInit {
 
   addItem = '';
-  public listObj: any;
 
   constructor(private toDoListService: ToDoListService) { }
 
   ngOnInit() {
-      this.listObj = this.toDoListService;
   }
 
   // public addList(): void {

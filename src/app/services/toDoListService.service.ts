@@ -7,7 +7,6 @@ export class ToDoListService {
     public pushItem = (item: string) => {
       if (item !== '') {
           this.items.push(item);
-          item = '';
       }
     }
 

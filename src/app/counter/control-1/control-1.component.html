@@ -1,3 +1,18 @@
-<p>
-  control-1 works!
-</p>
+<div class="control-1-wrapper">
+  <button
+      class="btn"
+      (click)="decreaseCounter()">
+    -
+  </button>
+  <div class="result">{{countrolResult}}</div>
+  <button
+      class="btn"
+      (click)="increaseCounter()">
+    +
+  </button>
+  <button
+      class="btn"
+      (click)="resetCounter()">
+    Reset
+  </button>
+</div>

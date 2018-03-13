@@ -5,7 +5,7 @@
     <button (click)="addList()">Add</button>
   </div>
   <ul class="listItem">
-    <li *ngFor="let x of listObj.items; let ind = index">
+    <li *ngFor="let x of this.toDoListService.items; let ind = index">
       {{x}}
       <span (click)="removeItem(ind)">X</span>
     </li>

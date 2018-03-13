@@ -1,28 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import {CounterService} from './counterService.service';
 
 @Component({
   selector: 'app-counter',
   templateUrl: './counter.component.html',
-  styleUrls: ['./counter.component.scss']
+  styleUrls: ['./counter.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  providers : [CounterService]
 })
 export class CounterComponent implements OnInit {
-  countResult = 0;
+  private countResult: number = 0;
   negativeCount: boolean = false;
-  constructor() { }
+
+  constructor(
+      private changeRef: ChangeDetectorRef,
+      private counterService: CounterService
+  ) {
+
+  }
 
   ngOnInit() {
   }
 
   private increaseCounter = () => {
-      // if (this.countResult < 0) {
-      //     this.negativeCount = true;
-      // }
-      this.countResult ++;
+      this.counterService.incrementCounter();
+      this.countResult = this.counterService.Item;
+      this.changeRef.markForCheck();
   }
 
   private decreaseCounter = () => {
-      console.log('-25');
-      this.countResult --;
+      this.counterService.decrementCounter();
+      this.countResult = this.counterService.Item;
+      this.changeRef.markForCheck();
+  }
+
+  private resetCounter = () => {
+      this.counterService.resetAll();
+      this.countResult = this.counterService.Item;
+      this.changeRef.markForCheck();
   }
 
 }

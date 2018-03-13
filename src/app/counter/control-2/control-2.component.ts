@@ -12,4 +12,16 @@ export class Control2Component implements OnInit {
   ngOnInit() {
   }
 
+  private increaseCounter = () => {
+      console.log("i am increment from control-2");
+  }
+
+  private decreaseCounter = () => {
+      console.log("i am decrement from control-2");
+  }
+
+  private resetCounter = () => {
+      console.log("i am reset from control-2");
+  }
+
 }
