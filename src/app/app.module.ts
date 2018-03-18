@@ -10,6 +10,8 @@ import { Control1Component } from './counter/control-1/control-1.component';
 import { Control2Component } from './counter/control-2/control-2.component';
 import { ClockComponent } from './clock/clock.component';
 import { CounterComponent } from './counter/counter.component';
+import { ProductComponent } from './product/product/product.component';
+import { CribListingComponent } from './product/crib-listing/crib-listing.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { CounterComponent } from './counter/counter.component';
     Control1Component,
     Control2Component,
     ClockComponent,
-    CounterComponent
+    CounterComponent,
+    ProductComponent,
+    CribListingComponent
   ],
   imports: [
     BrowserModule,

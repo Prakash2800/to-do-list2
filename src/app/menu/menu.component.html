@@ -15,11 +15,17 @@
             [ngClass]="{'active': isCont3}">
             Clock
         </li>
+        <li
+            (click)="showContent('product')"
+            [ngClass]="{'active': isCont4}">
+            Product
+        </li>
     </ul>
 </div>
 <div class="content-wrapper">
     <div *ngIf="isCont1"><app-to-do-list></app-to-do-list></div>
     <div *ngIf="isCont2"><app-counter></app-counter></div>
     <div *ngIf="isCont3"><app-clock></app-clock></div>
+    <div *ngIf="isCont4"><app-product></app-product></div>
 </div>
 

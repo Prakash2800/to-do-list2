@@ -26,12 +26,20 @@ export class CounterComponent implements OnInit {
       this.counterService.incrementCounter();
       this.countResult = this.counterService.Item;
       this.changeRef.markForCheck();
+      if (this.countResult > 100) {
+          console.log("Negative value");
+          this.negativeCount = true;
+      }
   }
 
   private decreaseCounter = () => {
       this.counterService.decrementCounter();
       this.countResult = this.counterService.Item;
       this.changeRef.markForCheck();
+      if (this.countResult < 0) {
+          console.log("Negative value");
+          this.negativeCount = true;
+      }
   }
 
   private resetCounter = () => {

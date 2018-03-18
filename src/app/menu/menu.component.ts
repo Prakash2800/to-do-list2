@@ -9,9 +9,10 @@ import {Component, OnInit} from '@angular/core';
 export class MenuComponent implements OnInit {
   const
     item: string;
-  isCont1 = false;
-  isCont2 = true;
-  isCont3 = false;
+    isCont1 = false;
+    isCont2 = false;
+    isCont3 = false;
+    isCont4 = true;
 
   constructor() { }
 
@@ -21,22 +22,28 @@ export class MenuComponent implements OnInit {
   private showContent = (item): void => {
     switch (item) {
         case 'todo':
-            console.log('i am to do');
             this.isCont1 = true;
             this.isCont2 = false;
             this.isCont3 = false;
+            this.isCont4 = false;
             break;
         case 'counter':
-            console.log('i am counter');
             this.isCont1 = false;
             this.isCont2 = true;
             this.isCont3 = false;
+            this.isCont4 = false;
             break;
         case 'clock':
-            console.log('i am clock');
             this.isCont1 = false;
             this.isCont2 = false;
             this.isCont3 = true;
+            this.isCont4 = false;
+            break;
+        case 'product':
+            this.isCont1 = false;
+            this.isCont2 = false;
+            this.isCont3 = false;
+            this.isCont4 = true;
             break;
         default:
             console.log('ki mo supposer fer ici?');

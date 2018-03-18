@@ -1,13 +1,15 @@
 <div class="counter-wrapper">
   <button
       class="btn"
-      ng-disabled='negativeCount'
+      [disabled]='negativeCount'
+      [ngClass] = "{'disabled':negativeCount}"
       (click) = "decreaseCounter()">
     -
   </button>
   <div class="result"><p>{{countResult}}</p></div>
   <button
       class="btn"
+      [disabled]='negativeCount'
       (click) = "increaseCounter()">
     +
   </button>
