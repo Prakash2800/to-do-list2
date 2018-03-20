@@ -1,0 +1,9 @@
+.product-details {
+  &.thumbnail {
+    min-height: 440px;
+
+    .label {
+      display: inline-block;
+    }
+  }
+}

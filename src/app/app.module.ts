@@ -12,6 +12,7 @@ import { ClockComponent } from './clock/clock.component';
 import { CounterComponent } from './counter/counter.component';
 import { ProductComponent } from './product/product/product.component';
 import { CribListingComponent } from './product/crib-listing/crib-listing.component';
+import { CribCardComponent } from './product/crib-card/crib-card.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { CribListingComponent } from './product/crib-listing/crib-listing.compon
     ClockComponent,
     CounterComponent,
     ProductComponent,
-    CribListingComponent
+    CribListingComponent,
+    CribCardComponent
   ],
   imports: [
     BrowserModule,
