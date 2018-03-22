@@ -13,6 +13,8 @@ import { CounterComponent } from './counter/counter.component';
 import { ProductComponent } from './product/product/product.component';
 import { CribListingComponent } from './product/crib-listing/crib-listing.component';
 import { CribCardComponent } from './product/crib-card/crib-card.component';
+import {HttpModule} from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import { CribCardComponent } from './product/crib-card/crib-card.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
