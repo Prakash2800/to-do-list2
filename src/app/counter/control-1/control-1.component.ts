@@ -7,27 +7,25 @@ import {CounterService} from '../counterService.service';
   styleUrls: ['./control-1.component.scss']
 })
 export class Control1Component implements OnInit {
-  private countrolResult: number = 0;
+  private countrolResult = 0;
   constructor(
       private counterService: CounterService
   ) { }
 
   ngOnInit() {
+      this.counterService.count$.subscribe((currentValue) => {this.countrolResult = currentValue;});
   }
 
-  private increaseCounter = () => {
+  private increaseCounter() {
       this.counterService.incrementCounter();
-      this.countrolResult = this.counterService.Item;
   }
 
-  private decreaseCounter = () => {
+  private decreaseCounter() {
       this.counterService.decrementCounter();
-      this.countrolResult = this.counterService.Item;
   }
 
-  private resetCounter = () => {
+  private resetCounter() {
       this.counterService.resetAll();
-      this.countrolResult = this.counterService.Item;
   }
 
 }

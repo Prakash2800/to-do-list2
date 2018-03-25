@@ -15,6 +15,9 @@ import { CribListingComponent } from './product/crib-listing/crib-listing.compon
 import { CribCardComponent } from './product/crib-card/crib-card.component';
 import {HttpModule} from '@angular/http';
 import {HttpClientModule} from '@angular/common/http';
+import {GetDataService} from './services/getDataService.service';
+import { HeaderComponent } from './header/header.component';
+import {CounterService} from './counter/counterService.service';
 
 
 @NgModule({
@@ -28,14 +31,17 @@ import {HttpClientModule} from '@angular/common/http';
     CounterComponent,
     ProductComponent,
     CribListingComponent,
-    CribCardComponent
+    CribCardComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+      GetDataService,
+      CounterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

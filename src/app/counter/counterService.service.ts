@@ -1,18 +1,27 @@
 import { Injectable } from '@angular/core';
+import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class CounterService {
-    Item: number = 0;
+    private item = 5;
+    public count$: BehaviorSubject<number>;
 
-    public incrementCounter = () => {
-        this.Item ++;
+    constructor() {
+        this.count$ = new BehaviorSubject(this.item);
     }
 
-    public decrementCounter = () => {
-        this.Item --;
+    public incrementCounter() {
+        this.item ++;
+        this.count$.next(this.item);
     }
 
-    public resetAll = () => {
-        this.Item = 0;
+    public decrementCounter() {
+        this.item --;
+        this.count$.next(this.item);
+    }
+
+    public resetAll() {
+        this.item = 0;
+        this.count$.next(this.item);
     }
 }

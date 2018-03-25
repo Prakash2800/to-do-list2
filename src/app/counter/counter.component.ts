@@ -1,51 +1,45 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CounterService} from './counterService.service';
 
 @Component({
   selector: 'app-counter',
   templateUrl: './counter.component.html',
-  styleUrls: ['./counter.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  providers : [CounterService]
+  styleUrls: ['./counter.component.scss']
 })
+
 export class CounterComponent implements OnInit {
-  private countResult: number = 0;
-  negativeCount: boolean = false;
+  public countResult = 0;
+  disableButtonMinus = true;
+  disableButtonPlus = false;
 
   constructor(
-      private changeRef: ChangeDetectorRef,
       private counterService: CounterService
   ) {
 
   }
 
   ngOnInit() {
+      this.counterService.count$.subscribe((currentValue) => {this.countResult = currentValue; });
   }
 
-  private increaseCounter = () => {
+  public increaseCounter() {
       this.counterService.incrementCounter();
-      this.countResult = this.counterService.Item;
-      this.changeRef.markForCheck();
-      if (this.countResult > 100) {
-          console.log("Negative value");
-          this.negativeCount = true;
+      this.disableButtonMinus = false;
+      if (this.countResult >= 10) {
+          this.disableButtonPlus = true;
       }
   }
 
-  private decreaseCounter = () => {
+  public decreaseCounter() {
       this.counterService.decrementCounter();
-      this.countResult = this.counterService.Item;
-      this.changeRef.markForCheck();
-      if (this.countResult < 0) {
-          console.log("Negative value");
-          this.negativeCount = true;
+      this.disableButtonPlus = false;
+      if (this.countResult <= 0) {
+          this.disableButtonMinus = true;
       }
   }
 
-  private resetCounter = () => {
+  public resetCounter() {
       this.counterService.resetAll();
-      this.countResult = this.counterService.Item;
-      this.changeRef.markForCheck();
   }
 
 }

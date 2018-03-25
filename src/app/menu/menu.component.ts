@@ -10,9 +10,9 @@ export class MenuComponent implements OnInit {
   const
     item: string;
     isCont1 = false;
-    isCont2 = false;
+    isCont2 = true;
     isCont3 = false;
-    isCont4 = true;
+    isCont4 = false;
 
   constructor() { }
 

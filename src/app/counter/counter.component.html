@@ -1,15 +1,15 @@
 <div class="counter-wrapper">
   <button
       class="btn"
-      [disabled]='negativeCount'
-      [ngClass] = "{'disabled':negativeCount}"
+      [disabled]='disableButtonMinus'
+      [ngClass] = "{'disabled':disableButtonMinus}"
       (click) = "decreaseCounter()">
-    -
+     -
   </button>
   <div class="result"><p>{{countResult}}</p></div>
   <button
       class="btn"
-      [disabled]='negativeCount'
+      [disabled]='disableButtonPlus'
       (click) = "increaseCounter()">
     +
   </button>
@@ -21,3 +21,4 @@
 </div>
 <app-control-1></app-control-1>
 <app-control-2></app-control-2>
+

@@ -21,7 +21,7 @@ export class ToDoListComponent implements OnInit {
   //     this.addItem = '';
   // }
 
-  private addList = (): void => {
+  public addList = (): void => {
     this.toDoListService.pushItem (this.addItem);
     this.addItem = '';
   }
@@ -37,7 +37,7 @@ export class ToDoListComponent implements OnInit {
   //   }
   // }
   //
-  removeItem = (index) => {
+  public removeItem = (index) => {
     this.toDoListService.items.splice(index, 1);
   }
 
